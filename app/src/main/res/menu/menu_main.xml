@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="test.ktrips.HomeActivity">
+
+        <item
+            android:id="@+id/action_activities"
+            android:orderInCategory="100"
+            android:title="Activities"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_planner"
+            android:orderInCategory="100"
+            android:title="Planner"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_account"
+            android:orderInCategory="100"
+            android:title="Account"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_trips"
+            android:orderInCategory="100"
+            android:title="Trips"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_calendar"
+            android:orderInCategory="100"
+            android:title="Calendar"
+            app:showAsAction="never" />
+        <item
+            android:id="@+id/action_howitworks"
+            android:orderInCategory="100"
+            android:title="How it works"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_settings"
+            android:orderInCategory="100"
+            android:title="@string/action_settings"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_signout"
+            android:orderInCategory="100"
+            android:title="Sign Out"
+            app:showAsAction="never" />
+
+</menu>
