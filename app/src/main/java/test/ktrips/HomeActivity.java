@@ -1,5 +1,6 @@
 package test.ktrips;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -60,11 +61,19 @@ public class HomeActivity extends AppCompatActivity {
                 //goToHowitworks();
                 return true;
             case R.id.action_signout:
-                //goToSignout();
+                goToSignout();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
+    }
+
+    //Sign user out and bring them to login page
+    public void goToSignout(){
+
+        Intent changeToLoginActivity = new Intent(HomeActivity.this, LoginActivity.class);
+        HomeActivity.this.startActivity(changeToLoginActivity);
 
     }
 }

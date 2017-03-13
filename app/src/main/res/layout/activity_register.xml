@@ -18,7 +18,7 @@
         android:layout_weight="0.26">
 
     <EditText
-        android:id="@+id/email_register"
+        android:id="@+id/emailRegister"
         android:layout_width="278dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -30,7 +30,7 @@
         android:textColorHint="@color/grey" />
 
     <EditText
-            android:id="@+id/password_register"
+            android:id="@+id/passwordRegister"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -41,7 +41,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
     <EditText
-        android:id="@+id/confirm_password_register"
+        android:id="@+id/confirmPasswordRegister"
         android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -65,6 +65,6 @@
         android:padding="12dp"
         android:text="Create Account"/>
 
-    </LinearLayout>
+   </LinearLayout>
 
 </LinearLayout>
