@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.content_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //myLayout = (LinearLayout)findViewById(R.id.myLayout);
+        myLayout = (LinearLayout)findViewById(R.id.myLayout);
         imagebyXML = (ImageView)findViewById(R.id.image);
     }
 
