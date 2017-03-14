@@ -234,6 +234,8 @@ public class DBHandler extends SQLiteOpenHelper{ //DB Handler extended from SQLi
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    /**FOR NOW, I THINK WE CAN IGNORE THE SESSION METHODS**/
+
     //Session Methods
 
 
