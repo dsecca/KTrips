@@ -13,6 +13,12 @@
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="111dp"
+        android:contentDescription="@string/montreal"
+        android:src="@drawable/montreal" />
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,61 +27,10 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <TextView
-        android:text="Montréal is Canada’s second largest city and is home to nearly half of the province of Québec’s population. It is the metropolis of the province, and is one of the world's great cities and enjoys international acclaim."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="161dp"
-        android:contentDescription="@string/montreal"
-        android:src="@drawable/montreal" />
-
-    <TextView
-        android:text="Top 5 Most visited sites in Montreal:"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:id="@+id/textView2" />
-
-    <TextView
-        android:text="Mont-Royal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
-
-    <ImageView
-        android:layout_width="122dp"
-        android:layout_height="93dp"
-        android:contentDescription="@string/montroyal"
-        android:src="@drawable/montroyal" />
-
-    <TextView
-        android:text="2. Old Montreal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4" />
-
-    <ImageView
-        android:layout_width="122dp"
-        android:layout_height="93dp"
-        android:contentDescription="@string/vieuxmontreal"
-        android:src="@drawable/vieuxmontreal" />
-
-
-    <TextView
-        android:text="3. Old Port"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5" />
-
-    <ImageView
-        android:layout_width="122dp"
-        android:layout_height="93dp"
-        android:contentDescription="@string/oldport"
-        android:src="@drawable/oldport" />
-
+        android:layout_height="298dp"
+        android:id="@+id/listViewHome" />
 
 
 </LinearLayout>

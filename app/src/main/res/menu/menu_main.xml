@@ -13,13 +13,11 @@
         <item
             android:id="@+id/action_planner"
             android:orderInCategory="100"
-            android:title="Planner"
-            app:showAsAction="never" />
+            android:title="Planner" />
         <item
             android:id="@+id/action_account"
             android:orderInCategory="100"
-            android:title="Account"
-            app:showAsAction="never" />
+            android:title="Account" />
         <item
             android:id="@+id/action_trips"
             android:orderInCategory="100"
@@ -28,8 +26,7 @@
         <item
             android:id="@+id/action_calendar"
             android:orderInCategory="100"
-            android:title="Calendar"
-            app:showAsAction="never" />
+            android:title="Calendar" />
         <item
             android:id="@+id/action_howitworks"
             android:orderInCategory="100"
@@ -39,9 +36,7 @@
         <item
             android:id="@+id/action_settings"
             android:orderInCategory="100"
-            android:title="@string/action_settings"
-            app:showAsAction="never" />
-
+            android:title="@string/action_settings" />
         <item
             android:id="@+id/action_signout"
             android:orderInCategory="100"
