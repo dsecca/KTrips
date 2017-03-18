@@ -8,17 +8,28 @@
     android:padding="10dp"
     android:weightSum="1">
 
-   <LinearLayout
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:layout_weight="0.26">
+        android:paddingRight="20dp">
 
-    <EditText
-        android:id="@+id/emailRegister"
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="278dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Username"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@android:color/background_dark"
+            android:textColorHint="@color/grey" />
+
+        <EditText
+        android:id="@+id/email"
         android:layout_width="278dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -30,7 +41,7 @@
         android:textColorHint="@color/grey" />
 
     <EditText
-            android:id="@+id/passwordRegister"
+            android:id="@+id/password"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -41,7 +52,7 @@
             android:textColor="@color/black"
             android:textColorHint="@color/grey" />
     <EditText
-        android:id="@+id/confirmPasswordRegister"
+        android:id="@+id/confirmPassword"
         android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -51,19 +62,74 @@
         android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="@color/grey" />
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Country"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+        <RelativeLayout android:layout_width="match_parent"
+            android:layout_height="67dp">
+
+            <EditText
+                android:id="@+id/month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="MM"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey" />
+
+            <EditText
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="DD"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="YYYY"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>>
         <!-- Login Button -->
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/btn_createAccount"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#f9f4f4"
-        android:textColor="#227644"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:padding="12dp"
-        android:text="Create Account"/>
+       <android.support.v7.widget.AppCompatButton
+           android:id="@+id/c"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:background="#f9f4f4"
+           android:textColor="#227644"
+           android:textStyle="bold"
+           android:layout_marginTop="24dp"
+           android:layout_marginBottom="24dp"
+           android:padding="12dp"
+           android:text="Create Account"
+           android:onClick="createBtnClicked" />
 
    </LinearLayout>
 

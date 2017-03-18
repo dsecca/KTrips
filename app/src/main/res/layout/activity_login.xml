@@ -17,11 +17,11 @@
 
         <EditText
             android:id="@+id/email_login"
-            android:layout_width="152dp"
+            android:layout_width="311dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@color/white"
-            android:hint="Enter your email"
+            android:hint="Enter your username"
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:textColor="@android:color/background_dark"
@@ -51,7 +51,8 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="Login"/>
+            android:text="Login"
+            android:onClick="loginBtnClicked" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_signup"
@@ -62,7 +63,8 @@
             android:textStyle="bold"
             android:layout_marginBottom="24dp"
             android:padding="12dp"
-            android:text="Don't have an accout? Click here"/>
+            android:text="FORGOT PASSWORD?"
+            android:onClick="forgotBtnClicked" />
         <!-- Link to Login Screen -->
 
     </LinearLayout>

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,9 @@ public class HomeActivity extends AppCompatActivity {
     protected LinearLayout myLayout;
     ArrayList<String> activities;
 
+    DBHandler dbh; //Declare a DBHandler (Ahmed)
+    Toast toast; //(Ahmed)
+
 
 
     @Override
@@ -31,32 +35,54 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_home);
 
-        // Setting up the ListView
 
-        // Creating List View
-        ListView activityList=(ListView)findViewById(R.id.listViewHome);
-        activities = new ArrayList<String>();
-        getActivities();
+        dbh = new DBHandler(this, null, null, 1); //Create new DBHandler (Ahmed)
 
-        //creating new adapter
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,activities);
-
-        // Set the adapter
-        TextView textView = new TextView(this);
-        textView.setText("Acitivities");
-        activityList.addHeaderView(textView);
-
-        activityList.setAdapter(arrayAdapter);
+        if(dbh.userExist()){ //Check if there exists a user (Ahmed)
+            if(dbh.getSessionStatus()==1){ //Check if the session if ON (Ahmed)
 
 
+                // Setting up the ListView
+
+                // Creating List View
+                ListView activityList=(ListView)findViewById(R.id.listViewHome);
+                activities = new ArrayList<String>();
+                getActivities();
+
+                //creating new adapter
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,activities);
+
+                // Set the adapter
+                TextView textView = new TextView(this);
+                textView.setText("Acitivities");
+                activityList.addHeaderView(textView);
+
+                activityList.setAdapter(arrayAdapter);
+
+                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                setSupportActionBar(toolbar);
+
+                //myLayout = (LinearLayout)findViewById(R.id.myLayout);
+                imagebyXML = (ImageView)findViewById(R.id.image);
+
+            }else{
+                gotoLoginActivity();
+            }
+        }else{
+            gotoRegisterActivity();
+        }
+    }
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        //myLayout = (LinearLayout)findViewById(R.id.myLayout);
-        imagebyXML = (ImageView)findViewById(R.id.image);
-
+    @Override
+    public void onResume(){ //Override the onResume method to redirect the user to the appropriate activity. (Ahmed)
+        super.onResume();
+        if(!dbh.userExist()){ //Check if there exists a user (Ahmed)
+            gotoRegisterActivity();
+        }
+        if(dbh.getSessionStatus()==0){ //Check if the session if ON (Ahmed)
+            gotoLoginActivity();
+        }
 
     }
 
@@ -104,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
                 //goToHowitworks();
                 return true;
             case R.id.action_signout:
-                //goToSignout();
+                SignOut();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -117,6 +143,26 @@ public class HomeActivity extends AppCompatActivity {
         activities.add("Go to the Museum");
         activities.add("Watch a play");
 
+    }
+
+
+    public void gotoLoginActivity(){ //Public method that opens LoginActivity (Ahmed)
+        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoRegisterActivity(){ //Public method that opens RegisterActivity (Ahmed)
+        Intent intent = new Intent(HomeActivity.this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    public void SignOut(){ //Public method that signs the user out (Ahmed)
+        if(dbh.destroySession()==true){
+            gotoLoginActivity();
+        }else{
+            toast = Toast.makeText(getApplicationContext(), "FAIL", Toast.LENGTH_SHORT); //(Ahmed)
+            toast.show(); //(Ahmed)
+        }
     }
 
 
