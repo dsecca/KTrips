@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class PlanActivity extends AppCompatActivity {
 
     // Initializing Variables
-     ArrayList<String> locations;
+    ArrayList<String> locations;
     public static String newline = System.getProperty("line.separator");
 
 
@@ -77,17 +77,17 @@ public class PlanActivity extends AppCompatActivity {
     }
 
 
-void getLocations()
-{
+    void getLocations()
+    {
 
 
-    locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
-    locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
-    locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
-    locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
+        locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
+        locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
+        locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
+        locations.add("Activity : Museum " + newline + "Time: 14:30" + newline + "Cost : $ 5.00" +  newline +"Direction");
 
 
-}
+    }
 
 
 

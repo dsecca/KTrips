@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class ShoppingCartActivity extends AppCompatActivity {
 
-   // Creating Buttons
+    // Creating Buttons
     protected Button viewLocations;
     protected Button viewDataLocations;
 
