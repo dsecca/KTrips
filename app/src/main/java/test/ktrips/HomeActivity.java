@@ -23,6 +23,8 @@ public class HomeActivity extends AppCompatActivity {
 
     protected ImageView imagebyXML;
     protected LinearLayout myLayout;
+    protected Button createATripButton; //(David)
+    protected Button accessAPreviousTripButton; //(David)
     ArrayList<String> activities;
 
     DBHandler dbh; //Declare a DBHandler (Ahmed)
@@ -42,12 +44,18 @@ public class HomeActivity extends AppCompatActivity {
             if(dbh.getSessionStatus()==1){ //Check if the session if ON (Ahmed)
 
                 //Get Create Trip and View Previous Trip buttons (David)
+                createATripButton = (Button) findViewById(R.id.createATripButton); //(David)
+                accessAPreviousTripButton = (Button) findViewById(R.id.accessATripButton); //(David)
 
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 setSupportActionBar(toolbar);
 
                 //myLayout = (LinearLayout)findViewById(R.id.myLayout);
                 imagebyXML = (ImageView)findViewById(R.id.image);
+
+                //Set click listeners (David)
+                createATripButton.setOnClickListener(onClickCreateATripButton);
+                accessAPreviousTripButton.setOnClickListener(onClickAccessATripButton);
 
             }else{
                 gotoLoginActivity();
@@ -79,6 +87,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+    //THIS WILL HAVE TO BE CALLED WHEN A TRIP IS CREATED
     public void  gotoPlanner() {
 
         Intent intent = new Intent(HomeActivity.this, PlanActivity.class);
@@ -93,22 +102,10 @@ public class HomeActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         //int id = item.getItemId();
-        switch (item.getItemId()) {
+        switch (item.getItemId()) { //(David) removed some extra items in menu
 
-            case R.id.action_activities:
-                //goToActivities();
-                return true;
             case R.id.action_planner:
                 gotoPlanner();
-                return true;
-            case R.id.action_account:
-                //goToAccount();
-                return true;
-            case R.id.action_trips:
-                //goToTrips();
-                return true;
-            case R.id.action_calendar:
-                //goToCalendar();
                 return true;
             case R.id.action_howitworks:
                 //goToHowitworks();
@@ -141,6 +138,27 @@ public class HomeActivity extends AppCompatActivity {
             toast.show(); //(Ahmed)
         }
     }
+
+    //(David) Create a trip button click action
+    private Button.OnClickListener onClickCreateATripButton =  new Button.OnClickListener(){
+        public void onClick(View v){
+            //HERE A TRIP OBJECT IS CREATED IN THE DATABASE
+            //ONCE TRIP IS CREATED, THE USER IS BROUGHT TO THE PLANNER PAGE
+            //FOR NOW IT JUST GOES TO THE PLANNER
+
+            gotoPlanner();
+        }
+    };
+
+    //(David) Access a trip button click action
+    private Button.OnClickListener onClickAccessATripButton =  new Button.OnClickListener(){
+        public void onClick(View v){
+            //HERE WE SHOW PREVIOUS TRIPS IN DATABASE
+            //ONCE TRIP IS CHOSEN, THE USER IS BROUGHT TO THE PLANNER PAGE
+            //FOR NOW IT JUST GOES TO THE PLANNER
+            gotoPlanner();
+        }
+    };
 
 
 

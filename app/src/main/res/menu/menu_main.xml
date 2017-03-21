@@ -6,27 +6,9 @@
         tools:context="test.ktrips.HomeActivity">
 
         <item
-            android:id="@+id/action_activities"
-            android:orderInCategory="100"
-            android:title="Activities"
-            app:showAsAction="never" />
-        <item
             android:id="@+id/action_planner"
             android:orderInCategory="100"
             android:title="Planner" />
-        <item
-            android:id="@+id/action_account"
-            android:orderInCategory="100"
-            android:title="Account" />
-        <item
-            android:id="@+id/action_trips"
-            android:orderInCategory="100"
-            android:title="Trips"
-            app:showAsAction="never" />
-        <item
-            android:id="@+id/action_calendar"
-            android:orderInCategory="100"
-            android:title="Calendar" />
         <item
             android:id="@+id/action_howitworks"
             android:orderInCategory="100"
