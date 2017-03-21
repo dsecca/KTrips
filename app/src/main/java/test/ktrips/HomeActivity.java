@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
                 setSupportActionBar(toolbar);
 
                 //myLayout = (LinearLayout)findViewById(R.id.myLayout);
-                imagebyXML = (ImageView)findViewById(R.id.image);
+                //imagebyXML = (ImageView)findViewById(R.id.image);
 
                 //Set click listeners (David)
                 createATripButton.setOnClickListener(onClickCreateATripButton);
@@ -104,9 +104,6 @@ public class HomeActivity extends AppCompatActivity {
         //int id = item.getItemId();
         switch (item.getItemId()) { //(David) removed some extra items in menu
 
-            case R.id.action_planner:
-                gotoPlanner();
-                return true;
             case R.id.action_howitworks:
                 //goToHowitworks();
                 return true;

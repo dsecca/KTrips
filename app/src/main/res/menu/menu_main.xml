@@ -6,13 +6,9 @@
         tools:context="test.ktrips.HomeActivity">
 
         <item
-            android:id="@+id/action_planner"
-            android:orderInCategory="100"
-            android:title="Planner" />
-        <item
             android:id="@+id/action_howitworks"
             android:orderInCategory="100"
-            android:title="How it works"
+            android:title="How the app works"
             app:showAsAction="never" />
 
         <item
