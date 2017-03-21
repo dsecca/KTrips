@@ -41,23 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         if(dbh.userExist()){ //Check if there exists a user (Ahmed)
             if(dbh.getSessionStatus()==1){ //Check if the session if ON (Ahmed)
 
-
-                // Setting up the ListView
-
-                // Creating List View
-                ListView activityList=(ListView)findViewById(R.id.listViewHome);
-                activities = new ArrayList<String>();
-                getActivities();
-
-                //creating new adapter
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,activities);
-
-                // Set the adapter
-                TextView textView = new TextView(this);
-                textView.setText("Acitivities");
-                activityList.addHeaderView(textView);
-
-                activityList.setAdapter(arrayAdapter);
+                //Get Create Trip and View Previous Trip buttons (David)
 
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 setSupportActionBar(toolbar);
@@ -135,13 +119,6 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
-    }
-
-    void getActivities() {
-        activities.add("Go to Peel Park");
-        activities.add("Go to the Museum");
-        activities.add("Watch a play");
 
     }
 
