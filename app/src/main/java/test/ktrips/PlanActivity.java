@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class PlanActivity extends AppCompatActivity {
     // Initializing Variables
     ArrayList<String> locations;
     public static String newline = System.getProperty("line.separator");
+    protected EditText inputDestination; //(David)
+    protected Button enterDestination; //(David)
 
 
     @Override
@@ -57,6 +60,13 @@ public class PlanActivity extends AppCompatActivity {
 
             }
         });
+
+        //Initialize enter destination button (David)
+        enterDestination = (Button) findViewById(R.id.enterDestination);
+        enterDestination.setOnClickListener(onClickEnterDestination);
+
+        //Initialize the EditText field (David)
+        inputDestination = (EditText) findViewById(R.id.inputDestination);
     }
 
 
@@ -88,6 +98,16 @@ public class PlanActivity extends AppCompatActivity {
 
 
     }
+
+    private Button.OnClickListener onClickEnterDestination = new Button.OnClickListener(){
+        public void onClick(View v){
+            String destination = inputDestination.getText().toString();
+            System.out.println("Destination is: " + destination);
+
+            //We then send the destination to the Google Maps API for processing
+
+        }
+    };
 
 
 

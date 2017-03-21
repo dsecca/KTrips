@@ -13,4 +13,25 @@
     tools:context="test.ktrips.PlanActivity"
     tools:showIn="@layout/activity_plan">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Enter your destination"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:id="@+id/inputDestination"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/enterDestination" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/enterDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#f9f4f4"
+        android:textColor="#227644"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:text="Go!"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

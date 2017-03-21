@@ -21,8 +21,8 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    protected ImageView imagebyXML;
-    protected LinearLayout myLayout;
+    //protected ImageView imagebyXML;
+    //protected LinearLayout myLayout;
     protected Button createATripButton; //(David)
     protected Button accessAPreviousTripButton; //(David)
     ArrayList<String> activities;
