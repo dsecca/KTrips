@@ -95,6 +95,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    public void goToTravel () {
+        Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+        HomeActivity.this.startActivity(intent);
+    }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -104,6 +111,21 @@ public class HomeActivity extends AppCompatActivity {
         //int id = item.getItemId();
         switch (item.getItemId()) { //(David) removed some extra items in menu
 
+            case R.id.action_activities:
+                //goToActivities();
+                return true;
+            case R.id.action_planner:
+                gotoPlanner();
+                return true;
+            case R.id.action_account:
+                //goToAccount();
+                return true;
+            case R.id.action_trips:
+                goToTravel();
+                return true;
+            case R.id.action_calendar:
+                //goToCalendar();
+                return true;
             case R.id.action_howitworks:
                 //goToHowitworks();
                 return true;
@@ -143,7 +165,7 @@ public class HomeActivity extends AppCompatActivity {
             //ONCE TRIP IS CREATED, THE USER IS BROUGHT TO THE PLANNER PAGE
             //FOR NOW IT JUST GOES TO THE PLANNER
 
-            gotoPlanner();
+            gotoPlanner(); //MAY HAVE TO CHANGE TO GOTOTRAVEL()
         }
     };
 
@@ -153,7 +175,7 @@ public class HomeActivity extends AppCompatActivity {
             //HERE WE SHOW PREVIOUS TRIPS IN DATABASE
             //ONCE TRIP IS CHOSEN, THE USER IS BROUGHT TO THE PLANNER PAGE
             //FOR NOW IT JUST GOES TO THE PLANNER
-            gotoPlanner();
+            gotoPlanner(); //MAY HAVE TO CHANGE TO GOTOTRAVEL()
         }
     };
 
