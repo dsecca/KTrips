@@ -21,8 +21,10 @@ import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
-    protected ImageView imagebyXML;
-    protected LinearLayout myLayout;
+    //protected ImageView imagebyXML;
+    //protected LinearLayout myLayout;
+    protected Button createATripButton; //(David)
+    protected Button accessAPreviousTripButton; //(David)
     ArrayList<String> activities;
 
     DBHandler dbh; //Declare a DBHandler (Ahmed)
@@ -41,29 +43,19 @@ public class HomeActivity extends AppCompatActivity {
         if(dbh.userExist()){ //Check if there exists a user (Ahmed)
             if(dbh.getSessionStatus()==1){ //Check if the session if ON (Ahmed)
 
-
-                // Setting up the ListView
-
-                // Creating List View
-                ListView activityList=(ListView)findViewById(R.id.listViewHome);
-                activities = new ArrayList<String>();
-                getActivities();
-
-                //creating new adapter
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,activities);
-
-                // Set the adapter
-                TextView textView = new TextView(this);
-                textView.setText("Acitivities");
-                activityList.addHeaderView(textView);
-
-                activityList.setAdapter(arrayAdapter);
+                //Get Create Trip and View Previous Trip buttons (David)
+                createATripButton = (Button) findViewById(R.id.createATripButton); //(David)
+                accessAPreviousTripButton = (Button) findViewById(R.id.accessATripButton); //(David)
 
                 Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
                 setSupportActionBar(toolbar);
 
                 //myLayout = (LinearLayout)findViewById(R.id.myLayout);
-                imagebyXML = (ImageView)findViewById(R.id.image);
+                //imagebyXML = (ImageView)findViewById(R.id.image);
+
+                //Set click listeners (David)
+                createATripButton.setOnClickListener(onClickCreateATripButton);
+                accessAPreviousTripButton.setOnClickListener(onClickAccessATripButton);
 
             }else{
                 gotoLoginActivity();
@@ -95,11 +87,19 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+    //THIS WILL HAVE TO BE CALLED WHEN A TRIP IS CREATED
     public void  gotoPlanner() {
 
         Intent intent = new Intent(HomeActivity.this, PlanActivity.class);
         HomeActivity.this.startActivity(intent);
     }
+
+
+    public void goToTravel () {
+        Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+        HomeActivity.this.startActivity(intent);
+    }
+
 
 
 
@@ -109,25 +109,12 @@ public class HomeActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         //int id = item.getItemId();
-        switch (item.getItemId()) {
+        switch (item.getItemId()) { //(David) removed some extra items in menu
 
-            case R.id.action_activities:
-                //goToActivities();
-                return true;
-            case R.id.action_planner:
-                gotoPlanner();
-                return true;
-            case R.id.action_account:
-                //goToAccount();
-                return true;
-            case R.id.action_trips:
-                //goToTrips();
-                return true;
-            case R.id.action_calendar:
-                //goToCalendar();
-                return true;
             case R.id.action_howitworks:
                 //goToHowitworks();
+                return true;
+            case R.id.action_settings:
                 return true;
             case R.id.action_signout:
                 SignOut();
@@ -135,13 +122,6 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
-    }
-
-    void getActivities() {
-        activities.add("Go to Peel Park");
-        activities.add("Go to the Museum");
-        activities.add("Watch a play");
 
     }
 
@@ -164,6 +144,27 @@ public class HomeActivity extends AppCompatActivity {
             toast.show(); //(Ahmed)
         }
     }
+
+    //(David) Create a trip button click action
+    private Button.OnClickListener onClickCreateATripButton =  new Button.OnClickListener(){
+        public void onClick(View v){
+            //HERE A TRIP OBJECT IS CREATED IN THE DATABASE
+            //ONCE TRIP IS CREATED, THE USER IS BROUGHT TO THE PLANNER PAGE
+            //FOR NOW IT JUST GOES TO THE PLANNER
+
+            gotoPlanner(); //MAY HAVE TO CHANGE TO GOTOTRAVEL()
+        }
+    };
+
+    //(David) Access a trip button click action
+    private Button.OnClickListener onClickAccessATripButton =  new Button.OnClickListener(){
+        public void onClick(View v){
+            //HERE WE SHOW PREVIOUS TRIPS IN DATABASE
+            //ONCE TRIP IS CHOSEN, THE USER IS BROUGHT TO THE PLANNER PAGE
+            //FOR NOW IT JUST GOES TO THE PLANNER
+            gotoPlanner(); //MAY HAVE TO CHANGE TO GOTOTRAVEL()
+        }
+    };
 
 
 
