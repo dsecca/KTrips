@@ -102,6 +102,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    public void goToTravel () {
+        Intent intent = new Intent(HomeActivity.this, TravelActivity.class);
+        HomeActivity.this.startActivity(intent);
+    }
+
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -121,7 +128,7 @@ public class HomeActivity extends AppCompatActivity {
                 //goToAccount();
                 return true;
             case R.id.action_trips:
-                //goToTrips();
+                goToTravel();
                 return true;
             case R.id.action_calendar:
                 //goToCalendar();
